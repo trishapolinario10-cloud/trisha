@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEasy PH - Online Shopping Philippines</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <div class="loading-logo">ShopEasy PH</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-shopping-bag me-2"></i>ShopEasy PH
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" data-bs-toggle="dropdown">
+                            Categories
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" data-category="all">All Products</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" data-category="electronics">Electronics</a></li>
+                            <li><a class="dropdown-item" href="#" data-category="fashion">Fashion</a></li>
+                            <li><a class="dropdown-item" href="#" data-category="home">Home & Kitchen</a></li>
+                            <li><a class="dropdown-item" href="#" data-category="beauty">Beauty & Health</a></li>
+                            <li><a class="dropdown-item" href="#" data-category="sports">Sports & Outdoors</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#deals">Deals</a>
+                    </li>
+                </ul>
+                
+                <form class="d-flex me-3" role="search" id="searchForm">
+                    <div class="input-group">
+                        <input class="form-control" type="search" placeholder="Search products..." id="searchInput">
+                        <button class="btn btn-outline-primary" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+                
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
+                            <div class="user-avatar">TA</div>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><h6 class="dropdown-header">Trisha Ang Apolinario</h6></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#accountModal"><i class="fas fa-user me-2"></i>My Account</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-heart me-2"></i>Wishlist</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-box me-2"></i>Orders</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link cart-icon" href="#" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">
+                            <i class="fas fa-shopping-cart fa-lg"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="hero-bg"></div>
+        <div class="container text-center position-relative">
+            <h1 class="display-4 fw-bold mb-4 fade-in-up">Shop the Filipino Way</h1>
+            <p class="lead mb-4 fade-in-up" data-aos="fade-up" data-aos-delay="200">Discover amazing deals on local and international brands. Free shipping for orders over ₱500!</p>
+            <a href="#products" class="btn btn-warning btn-lg px-4 py-2 fw-bold fade-in-up" data-aos="zoom-in" data-aos-delay="400">Shop Now <i class="fas fa-arrow-right ms-2"></i></a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4 text-center" data-aos="fade-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h4>Free Shipping</h4>
+                    <p class="text-muted">Free delivery for orders over ₱500 within Metro Manila</p>
+                </div>
+                <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-undo-alt"></i>
+                    </div>
+                    <h4>Easy Returns</h4>
+                    <p class="text-muted">30-day return policy for all items</p>
+                </div>
+                <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h4>Secure Payment</h4>
+                    <p class="text-muted">Your payment information is safe with us</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="py-5" id="products">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="fw-bold" data-aos="fade-right">Featured Products</h2>
+                <div class="dropdown" data-aos="fade-left">
+                    <button class="btn btn-outline-primary dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown">
+                        Sort by: Featured
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Featured</a></li>
+                        <li><a class="dropdown-item" href="#">Price: Low to High</a></li>
+                        <li><a class="dropdown-item" href="#">Price: High to Low</a></li>
+                        <li><a class="dropdown-item" href="#">Customer Reviews</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Search Results -->
+            <div id="searchResults" class="mb-4" style="display: none;">
+                <h4 class="mb-3">Search Results</h4>
+                <div class="row" id="resultsContainer"></div>
+                <hr class="my-4">
+            </div>
+
+            <!-- Products Grid -->
+            <div class="row g-4" id="productsContainer">
+                <!-- Products will be loaded here -->
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-5">
+                <button class="btn btn-outline-primary" id="loadMore">Load More Products</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallax Section -->
+    <section class="parallax-section text-white text-center" style="background-image: url('https://images.unsplash.com/photo-1607082350899-7e105aa886ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <div class="parallax-overlay"></div>
+        <div class="container position-relative">
+            <h2 class="display-5 fw-bold mb-4" data-aos="fade-up">Summer Sale Up to 50% Off</h2>
+            <p class="lead mb-4" data-aos="fade-up" data-aos-delay="200">Don't miss out on our biggest sale of the year. Limited time offer!</p>
+            <a href="#products" class="btn btn-warning btn-lg px-4 py-2 fw-bold" data-aos="zoom-in" data-aos-delay="400">Shop the Sale</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section bg-light" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                    <h2 class="fw-bold mb-4">About ShopEasy PH</h2>
+                    <p class="lead mb-4">ShopEasy PH is the Philippines' fastest growing online shopping destination, offering a wide range of products from local and international brands.</p>
+                    <p>Founded in 2020, we've served over 1 million customers across the country with our commitment to quality products, competitive prices, and excellent customer service.</p>
+                    <p>Our mission is to make online shopping accessible, convenient, and enjoyable for every Filipino.</p>
+                    <a href="#" class="btn btn-primary mt-3">Learn More About Us</a>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="img-fluid rounded shadow" alt="About Us">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-4" data-aos="zoom-in">
+                    <div class="stat-number">1M+</div>
+                    <p>Happy Customers</p>
+                </div>
+                <div class="col-md-3 mb-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="stat-number">50K+</div>
+                    <p>Products Available</p>
+                </div>
+                <div class="col-md-3 mb-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="stat-number">500+</div>
+                    <p>Brand Partners</p>
+                </div>
+                <div class="col-md-3 mb-4" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="stat-number">81</div>
+                    <p>Provinces Served</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Offcanvas -->
+    <div class="offcanvas offcanvas-end offcanvas-cart" tabindex="-1" id="cartOffcanvas">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Your Shopping Cart</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div id="cartItems">
+                <!-- Cart items will be loaded here -->
+                <div class="text-center text-muted py-4" id="emptyCart">
+                    <i class="fas fa-shopping-cart fa-3x mb-3"></i>
+                    <p>Your cart is empty</p>
+                </div>
+            </div>
+        </div>
+        <div class="offcanvas-footer p-3 border-top">
+            <div class="d-flex justify-content-between mb-3">
+                <span class="fw-bold">Total:</span>
+                <span class="fw-bold price" id="cartTotal">₱0.00</span>
+            </div>
+            <button class="btn btn-primary w-100 py-2" id="checkoutBtn" disabled data-bs-toggle="modal" data-bs-target="#paymentModal">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Account Modal -->
+    <div class="modal fade" id="accountModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">My Account</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="user-avatar me-3" style="width: 60px; height: 60px;">TA</div>
+                        <div>
+                            <h5 class="mb-0">Trisha And Apolinario</h5>
+                            <p class="text-muted mb-0">trisha.ang@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control" value="Trisha Ang Apolinario">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" value="trisha.ang@gmail.com">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" value="+63 912 345 6789">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Address</label>
+                        <textarea class="form-control" rows="3">123 Main Street, Quezon City, Metro Manila</textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div class="modal fade" id="paymentModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Complete Your Purchase</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="mb-3">Order Summary</h6>
+                            <div id="paymentOrderSummary">
+                                <!-- Order items will be loaded here -->
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between">
+                                <span>Total:</span>
+                                <span class="fw-bold price" id="paymentTotal">₱0.00</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="mb-3">Payment Method</h6>
+                            <div class="mb-3">
+                                <div class="row g-2">
+                                    <div class="col-6">
+                                        <div class="card payment-method-card active" data-method="gcash">
+                                            <div class="card-body text-center py-3">
+                                                <i class="fas fa-mobile-alt fa-2x text-primary mb-2"></i>
+                                                <h6>GCash</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="card payment-method-card" data-method="card">
+                                            <div class="card-body text-center py-3">
+                                                <i class="far fa-credit-card fa-2x text-primary mb-2"></i>
+                                                <h6>Credit Card</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="card payment-method-card" data-method="paymaya">
+                                            <div class="card-body text-center py-3">
+                                                <i class="fas fa-wallet fa-2x text-primary mb-2"></i>
+                                                <h6>PayMaya</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="card payment-method-card" data-method="cod">
+                                            <div class="card-body text-center py-3">
+                                                <i class="fas fa-money-bill-wave fa-2x text-primary mb-2"></i>
+                                                <h6>Cash on Delivery</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- GCash Form -->
+                            <div class="payment-form" id="gcashForm">
+                                <div class="mb-3">
+                                    <label class="form-label">GCash Mobile Number</label>
+                                    <input type="tel" class="form-control" placeholder="09XX XXX XXXX">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">GCash Name</label>
+                                    <input type="text" class="form-control" placeholder="As it appears in your GCash account">
+                                </div>
+                            </div>
+
+                            <!-- Credit Card Form -->
+                            <div class="payment-form d-none" id="cardForm">
+                                <div class="mb-3">
+                                    <label class="form-label">Card Number</label>
+                                    <input type="text" class="form-control" placeholder="1234 5678 9012 3456">
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Expiry Date</label>
+                                        <input type="text" class="form-control" placeholder="MM/YY">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">CVV</label>
+                                        <input type="text" class="form-control" placeholder="123">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Cardholder Name</label>
+                                    <input type="text" class="form-control" placeholder="John Doe">
+                                </div>
+                            </div>
+
+                            <!-- PayMaya Form -->
+                            <div class="payment-form d-none" id="paymayaForm">
+                                <div class="mb-3">
+                                    <label class="form-label">PayMaya Mobile Number</label>
+                                    <input type="tel" class="form-control" placeholder="09XX XXX XXXX">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">PayMaya Name</label>
+                                    <input type="text" class="form-control" placeholder="As it appears in your PayMaya account">
+                                </div>
+                            </div>
+
+                            <!-- COD Notice -->
+                            <div class="payment-form d-none" id="codForm">
+                                <div class="alert alert-info">
+                                    <i class="fas fa-info-circle me-2"></i>
+                                    Pay with cash when your order is delivered. Available for orders within Metro Manila only.
+                                </div>
+                            </div>
+
+                            <button class="btn btn-success w-100 mt-3" id="confirmPayment">
+                                <i class="fas fa-lock me-2"></i>Confirm Payment
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold">ShopEasy PH</h5>
+                    <p>Your trusted online shopping destination in the Philippines. Quality products at affordable prices.</p>
+                    <div class="d-flex">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-tiktok fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h5 class="fw-bold">Shop</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50 text-decoration-none">All Products</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Deals</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">New Arrivals</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Best Sellers</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h5 class="fw-bold">Help</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50 text-decoration-none">Customer Service</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Track Order</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Returns & Refunds</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold">Payment Methods</h5>
+                    <div class="d-flex flex-wrap">
+                        <div class="bg-light rounded p-2 me-2 mb-2">
+                            <span class="fw-bold text-dark">GCash</span>
+                        </div>
+                        <div class="bg-light rounded p-2 me-2 mb-2">
+                            <span class="fw-bold text-dark">PayMaya</span>
+                        </div>
+                        <div class="bg-light rounded p-2 me-2 mb-2">
+                            <span class="fw-bold text-dark">Credit Card</span>
+                        </div>
+                        <div class="bg-light rounded p-2 me-2 mb-2">
+                            <span class="fw-bold text-dark">COD</span>
+                        </div>
+                    </div>
+                    <p class="mt-3 text-white-50">We accept cash on delivery for orders within Metro Manila.</p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center text-white-50">
+                <p>&copy; 2025 ShopEasy PH. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap & jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</body>
+</html>
